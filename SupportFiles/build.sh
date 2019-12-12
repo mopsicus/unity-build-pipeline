@@ -9,6 +9,8 @@ PROJECT_PATH="$(dirname "$(PWD)")"
 # PARAMS TO CHANGE
 #
 
+BRANCH='master'
+
 COMPANY='my_company'
 GAME_NAME='new_game'
 BUNDLE='com.mygames.game'
@@ -49,6 +51,19 @@ UNITY='/Applications/Unity/Hub/Editor/2019.3.0f1/Unity.app/Contents/MacOS/Unity'
 [ -d "$IOS_BUILD_PATH" ] || mkdir "$IOS_BUILD_PATH"
 [ -d "$IOS_DEVELOPMENT" ] || mkdir "$IOS_DEVELOPMENT"
 [ -d "$IOS_RELEASE" ] || mkdir "$IOS_RELEASE"
+
+function UpdateRepo {
+echo ''
+echo "update branch $BRANCH..." 
+echo ''     
+git fetch > "$LOGS_PATH/git.log" 2>&1
+git reset --hard HEAD >> "$LOGS_PATH/git.log" 2>&1
+git checkout $BRANCH >> "$LOGS_PATH/git.log" 2>&1
+git pull >> "$LOGS_PATH/git.log" 2>&1
+echo ''
+echo "$BRANCH updated" 
+echo ''     
+}
 
 function SendTelegramMessage {
 curl $BOT_PROXY https://api.telegram.org/bot$BOT_TOKEN/sendMessage -m 60 -s -X POST -d chat_id=$CHAT_ID -d text="$1" > "$LOGS_PATH/bot.log" 2>&1
@@ -286,6 +301,8 @@ echo '|||||||||||||||||||||||||||||||'
 echo ''
 echo ''
 echo ''
+echo "0 – Update branch $BRANCH"
+echo ''
 echo '1 – Run tests'
 echo ''
 echo '2 – Android development'
@@ -309,6 +326,9 @@ exit 1
 fi
 clear
 case $key in
+0)
+UpdateRepo
+;; 
 1)
 Tests
 ;; 
