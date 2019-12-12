@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>${TITLE} ${PLATFORM} build</title>
+        <base target="_self"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+        <style>body,html{
+        height:100%;
+        }</style>
+    </head>
+    <body >
+        <div class="container h-100"> 
+                <div class="row h-10 justify-content-center align-items-center">
+                    <h1>${TITLE}</h1>
+                </div>              
+                <div class="row h-10 justify-content-center align-items-center">
+                    <h2>ver. ${VERSION}</h2>     
+                </div>      
+                <div class="row h-10 justify-content-center align-items-center">
+                    <h6>${DATE}</h6>     
+                </div>                                             
+            <div class="row h-25 justify-content-center align-items-center">
+                <button id="download" type="button" class="btn btn-primary btn-lg">Download</button>
+            </div>        
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $('#download').on('click', function(event) {
+                window.location.href = '${URL}';
+            });                        
+        </script>
+    </body>
+</html>
+
