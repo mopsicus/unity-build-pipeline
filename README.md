@@ -3,15 +3,16 @@ Custom BASH script for build, archive, export and upload APK and IPA to server w
 
 ## Features
 1. Works without running Unity and Xcode
-2. Run tests
-3. Build Android APK
-4. Build Xcode project
-5. Run post build script
-6. Compile, archive and export to IPA with configurated manifests
-7. Generate HTML for install links
-8. Upload all object to remote server via sshpass
-9. Notify by Telegram bot
-10. Demos and full C# and BASH source code are all included
+2. Update from GIT
+3. Run tests
+4. Build Android APK
+5. Build Xcode project
+6. Run post build script
+7. Compile, archive and export to IPA with configurated manifests
+8. Generate HTML for install links
+9. Upload all object to remote server via sshpass
+10. Notify by Telegram bot
+11. Demos and full C# and BASH source code are all included
 
 ## How to use
 1. Edit params in ```SupportFiles/build.sh``` and manifests
