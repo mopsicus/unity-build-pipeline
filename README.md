@@ -11,7 +11,7 @@ Custom BASH script for build, archive, export and upload APK and IPA to server w
 7. Generate HTML for install links
 8. Upload all object to remote server via sshpass
 9. Notify by Telegram bot
-10. Demos and full C# source code are all included
+10. Demos and full C# and BASH source code are all included
 
 ## How to use
 1. Edit params in ```SupportFiles/build.sh``` and manifests
