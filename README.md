@@ -1,6 +1,8 @@
 # Unity Build Pipeline
 Custom BASH script for build, archive, export, sign and upload APK and IPA to server with Telegram notification
 
+> Also look at [Unity Builder Helper](https://github.com/mopsicus/ubh)
+
 ## Features
 1. Works without running Unity and Xcode
 2. Update repo from GIT
